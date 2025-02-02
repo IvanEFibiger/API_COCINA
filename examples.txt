@@ -1,0 +1,154 @@
+$url = "http://127.0.0.1:5000/api/v1/recipes"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+$body = '{
+    "title": "Pizza Margarita",
+    "description": "Una pizza con tomate y queso mozzarella",
+    "ingredients": ["tomato", "cheese", "basil"],
+    "portions": 4,
+    "recipe_steps": "Precalentar el horno, preparar la masa, agregar los ingredientes y hornear.",
+    "author": "John Doe"
+}'
+
+Invoke-WebRequest -Uri $url -Method POST -Headers $headers -Body $body
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    "title" = "Ensalada César"
+    "description" = "Una ensalada fresca con pollo, lechuga, croutons y aderezo César."
+    "ingredients" = @("lettuce", "chicken", "croutons", "caesar dressing")
+    "portions" = 2
+    "recipe_steps" = "Cortar el pollo en trozos, mezclar con la lechuga y los croutons, añadir el aderezo y servir."
+    "author" = "Jane Doe"
+}
+
+# Convertir a JSON con profundidad
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+# Especificar la codificación manualmente
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+# Enviar la solicitud con el cuerpo codificado en UTF-8
+Invoke-WebRequest -Uri $url -Method POST -Headers $headers -Body $encodedBody
+
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    "title" = "Tacos al Pastor"
+    "description" = "Tacos tradicionales mexicanos con carne de cerdo marinada y piña."
+    "ingredients" = @("pork", "pineapple", "onion", "cilantro", "taco shells")
+    "portions" = 5
+    "recipe_steps" = "Marinar la carne, cocinarla, cortar en trozos pequeños y servir en tortillas con piña y cebolla."
+    "author" = "Carlos Ramírez"
+}
+
+# Convertir a JSON con profundidad
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+# Especificar la codificación manualmente
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+# Enviar la solicitud con el cuerpo codificado en UTF-8
+Invoke-WebRequest -Uri $url -Method POST -Headers $headers -Body $encodedBody
+
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    "title" = "Sopa de Lentejas"
+    "description" = "Una sopa caliente de lentejas con zanahorias, apio y especias."
+    "ingredients" = @("lentils", "carrot", "celery", "onion", "garlic")
+    "portions" = 6
+    "recipe_steps" = "Cocinar las lentejas con las verduras y las especias hasta que estén tiernas. Servir caliente."
+    "author" = "María López"
+}
+
+# Convertir a JSON con profundidad
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+# Especificar la codificación manualmente
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+# Enviar la solicitud con el cuerpo codificado en UTF-8
+Invoke-WebRequest -Uri $url -Method POST -Headers $headers -Body $encodedBody
+
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    "title" = "Sopa de Lentejas"
+    "description" = "Una sopa caliente de lentejas con zanahorias, apio y especias."
+    "ingredients" = @("lentils", "carrot", "celery", "onion", "garlic")
+    "portions" = 6
+    "recipe_steps" = "Cocinar las lentejas con las verduras y las especias hasta que estén tiernas. Servir caliente."
+    "author" = "María López"
+}
+
+# Convertir a JSON con profundidad
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+# Especificar la codificación manualmente
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+# Enviar la solicitud con el cuerpo codificado en UTF-8
+Invoke-WebRequest -Uri $url -Method POST -Headers $headers -Body $encodedBody
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes/4"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+$body = @{
+    "title" = "Sopa de Lentejas"
+    "description" = "Una sopa caliente de lentejas con zanahorias, apio y especias."
+    "ingredients" = @("lentils", "carrot", "celery", "onion", "garlic")
+    "portions" = 4
+
+
+}
+
+
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+
+Invoke-WebRequest -Uri $url -Method PUT -Headers $headers -Body $encodedBody
+
+
+$url = "http://127.0.0.1:5000/api/v1/recipes/4"
+$headers = @{
+    "Content-Type" = "application/json"
+}
+
+
+
+
+$jsonBody = $body | ConvertTo-Json -Depth 5
+
+
+$encodedBody = [System.Text.Encoding]::UTF8.GetBytes($jsonBody)
+
+
+Invoke-WebRequest -Uri $url -Method DELETE -Headers $headers -Body $encodedBody
